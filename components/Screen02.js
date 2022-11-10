@@ -9,6 +9,12 @@ export default function Screen02({ route, navigation }) {
     const { item } = route.params;
     console.log(item);
     const [quantity, setQUantity] = useState(0);
+    const handleMoveToScreen03 = () => {
+        const newItem = {...item, quantity: quantity};
+        // navigation.navigate("Screen03", {newItem: newItem});
+        console.log('n = ', newItem);
+        navigation.navigate("Screen03", {newItem: newItem});
+    }
 
 
   return (
@@ -35,7 +41,7 @@ export default function Screen02({ route, navigation }) {
                 <Text>{quantity}</Text>
                 <AntDesign name="plus" size={24} color="black" onPress={() => setQUantity(quantity+1)} />
             </HStack>
-            <Button onPress={() => navigation.navigate("Screen03", {item: item, quantity: quantity})}>Add to cart</Button>
+            <Button onPress={() => handleMoveToScreen03()}>Add to cart</Button>
         </Box>
       </Center>
 
