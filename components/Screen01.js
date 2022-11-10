@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native';
 import React from 'react';
-import { Box, Button, Center, FlatList, HStack, Image, NativeBaseProvider, ScrollView } from 'native-base';
+import { Box, Button, Center, FlatList, HStack, Image, NativeBaseProvider, Pressable, ScrollView } from 'native-base';
 import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -17,6 +17,7 @@ export default function Screen01({ navigation }) {
     );
     function OneItem ({ item }) {
         return (
+            <Pressable onPress={() => navigation.navigate("Screen02", {item: item}) }>
             <Center>
                 <Box>
                     <Image source={cream1} size={60} alt="lcream1" />
@@ -25,6 +26,7 @@ export default function Screen01({ navigation }) {
                     <Text style={{ color:'red' }}>${item.price}</Text>
                 </Box>
             </Center>
+            </Pressable>
         )
     }
 
