@@ -7,13 +7,19 @@ import cream1 from '../assets/icream1.png';
 export default function Screen02({ route, navigation }) {
 
     const { item } = route.params;
+    const listItem = require("../listItem");
     console.log(item);
     const [quantity, setQUantity] = useState(0);
     const handleMoveToScreen03 = () => {
+        if(quantity <= 0 ){
+            alert('Vui long quantity > 0')
+            return;
+        }
         const newItem = {...item, quantity: quantity};
         // navigation.navigate("Screen03", {newItem: newItem});
         console.log('n = ', newItem);
-        navigation.navigate("Screen03", {newItem: newItem});
+        listItem.push(newItem);
+        navigation.navigate("Screen03", {newItem: newItem, listItem: listItem});
     }
 
 

@@ -6,7 +6,7 @@ import cream1 from '../assets/icream1.png';
 
 export default function Screen03({route, navigation}) {
 
-    const { newItem } = route.params;
+    const { newItem, listItem} = route.params;
     console.log(newItem);
     const data=require("../data");
     const renderItem = ({ item }) => (
@@ -41,7 +41,7 @@ export default function Screen03({route, navigation}) {
       </HStack>
 
       <FlatList 
-        data={data}
+        data={listItem}
         renderItem={renderItem}
         keyExtractor={item => item.id}
       />

@@ -24,4 +24,5 @@ const data = [{
     description: "Eat so mush to fat 5",
     price: "50.0000",
   }];
+
 module.exports = data;
